@@ -1,0 +1,240 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@import url("https://fonts.cdnfonts.com/css/helvetica-neue-5");
+.bebas {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.mountains {
+  background-image: url("/mountain.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.sky {
+  background-image: url("/sky.webp");
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+}
+.clip {
+  clip-path: polygon(0 0, 100% 65%, 100% 100%, 0% 100%);
+}
+.leftRight {
+  animation: leftright 2s infinite alternate-reverse ease-in-out;
+}
+
+@keyframes leftright {
+  0% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(5px);
+  }
+  50% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(5px);
+  }
+}
+.swiper-pagination-horizontal {
+  right: 10px !important;
+  left: auto !important;
+  width: fit-content !important;
+  bottom: auto !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #000;
+  border-radius: 100px;
+  cursor: pointer;
+  padding: 20px 5px;
+}
+.swiper-pagination-bullet {
+  background-color: whitesmoke !important;
+}
+.swiper-pagination-bullet-active {
+  background-color: rgb(249 115 22 / var(--tw-bg-opacity)) !important;
+  position: relative !important;
+}
+.swiper-pagination-bullet-active:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0%;
+  height: 100%;
+  background-color: transparent;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  transform-origin: center;
+  z-index: 55;
+  padding: 3px;
+  border: 2px solid rgb(249 115 22 / var(--tw-bg-opacity));
+  animation: progress 2s linear infinite;
+}
+
+@keyframes progress {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+.narutobg {
+  background-image: url("/bg_story_en.webp");
+  background-size: 125%;
+  background-position: top;
+  background-repeat: no-repeat;
+}
+/* }
+.narutobg {
+  background: url("/bg_story_en.webp") no-repeat top / auto 100%;
+} */
+
+.kakashi {
+  position: absolute;
+  inset: calc(-290px - 7.03125vw) 0px;
+  height: 720px;
+  clip-path: polygon(0px calc(14.0625vw), 100% 0px, 100% calc(100% - 14.0625vw), 0px 100%);
+  background: url("/intermission_1a_en.webp") center center / auto 820px no-repeat black;
+  transition: clip-path cubic-bezier(0, 0.55, 0.45, 1) 0.5s;
+}
+.clipp {
+  clip-path: polygon(0 0, 0 76%, 100% 100%, 0% 100%);
+}
+.comics {
+  clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 90%);
+  background: url("/bg_comics_en.webp") center center / cover no-repeat white;
+}
+.kakashi2 {
+  position: absolute;
+  inset: calc(-290px - 7.03125vw) 0px;
+  height: 720px;
+  clip-path: polygon(0px calc(14.0625vw), 100% 0px, 100% calc(100% - 14.0625vw), 0px 100%);
+  background: url("/intermission_2a_en (1).webp") center center / auto 820px no-repeat black;
+  transition: clip-path cubic-bezier(0, 0.55, 0.45, 1) 0.5s;
+}
+.kakashi3 {
+  position: absolute;
+  inset: calc(-290px - 7.03125vw) 0px;
+  height: 720px;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  background: url("/intermission_3a_en.webp") center center / auto 820px no-repeat black;
+  transition: clip-path cubic-bezier(0, 0.55, 0.45, 1) 0.5s;
+}
+.collectionbg {
+  background-image: url("/bg_others.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.jiraya {
+  position: absolute;
+  inset: calc(-290px - 7.03125vw) 0px;
+  height: 720px;
+  clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
+  background: url("/intermission_4a_en.webp") center center / auto 820px no-repeat black;
+  transition: clip-path cubic-bezier(0, 0.55, 0.45, 1) 0.5s;
+}
+.rocklee {
+  position: absolute;
+  inset: calc(-290px - 7.03125vw) 0px;
+  height: 720px;
+  clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
+  background: url("/intermission_5a_en.webp") center center / auto 820px no-repeat black;
+  transition: clip-path cubic-bezier(0, 0.55, 0.45, 1) 0.5s;
+}
+
+.twitter-container {
+  width: 100%;
+  max-width: 550px; /* or any desired maximum width */
+  margin: 0 auto;
+  border-radius: 30px;
+}
+
+.twitter-container > div {
+  width: 100% !important;
+  height: auto !important;
+}
