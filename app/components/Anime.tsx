@@ -46,6 +46,8 @@ const Anime = () => {
     };
   }, [changeNImageSrc, N, scroller]);
 
+
+  
   return (
     <section className="relative min-h-[140vh]" data-scroll-section id="anime">
       <div className="absolute z-50 inset-0 w-full h-screen">
